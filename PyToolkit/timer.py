@@ -8,7 +8,7 @@ class Timer(object):
     """"""
 
     # =============================================================
-    def __init__(self, name):
+    def __init__(self, name='Timer'):
         self._name = name
         self._start = None
         self._mem = None
@@ -26,9 +26,12 @@ class Timer(object):
         seconds = time.time() - self.start
         min, sec = divmod(seconds, 60)
         hour, min = divmod(min, 60)
-        print('\u001b[93m{}:Time: {} hours, {} mins, {:.2f} secs ({:.2f}S); Memory: {:0.2f}Mb\u001b[0m'.format(self.name, hour, min, sec,
-                                                                                            seconds,
-                                                                                            self.getmem() - self.mem))
+        print(
+            '\u001b[93m{}:Time: {} hours, {} mins, {:.2f} secs ({:.2f}S); Memory: {:0.2f}Mb\u001b[0m'.format(self.name,
+                                                                                                             hour, min,
+                                                                                                             sec,
+                                                                                                             seconds,
+                                                                                                             self.getmem() - self.mem))
         return
 
     # =============================================================
